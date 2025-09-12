@@ -1,0 +1,26 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Compares two configuration files and shows a difference",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gera-Bukhman/frontend-project-46.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gera-Bukhman/frontend-project-46/issues"
+  },
+  "homepage": "https://github.com/Gera-Bukhman/frontend-project-46#readme",
+  "dependencies": {
+    "commander": "^14.0.0"
+  },
+  "bin": {
+    "gendiff": "./bin/gendiff.js"
+  }
+}
