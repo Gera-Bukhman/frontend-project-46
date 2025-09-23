@@ -26,3 +26,11 @@ test('genDiff flat JSON files', () => {
   const result = genDiff(filepath1, filepath2);
   expect(normalize(result)).toEqual(normalize(expected));
 });
+
+test('genDiff flat YAML files', () => {
+  const filepath1 = getFixturePath('file1.yaml');
+  const filepath2 = getFixturePath('file2.yaml');
+  const expected = readFile('expected.txt');
+  const result = genDiff(filepath1, filepath2);
+  expect(normalize(result)).toEqual(normalize(expected));
+});
