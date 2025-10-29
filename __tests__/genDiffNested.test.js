@@ -14,20 +14,15 @@ const normalize = (s) => s.split('\n')
   .filter((line) => line.length > 0)
   .join('\n');
 
-test('genDiff flat JSON files', () => {
-  const filepath1 = getFixturePath('file1.json');
-  const filepath2 = getFixturePath('file2.json');
-  const expected = readFile('expected.txt');
-
-  const result = genDiff(filepath1, filepath2);
+test('gendiff JSON nested', () => {
+  const result = genDiff(getFixturePath('file1nested.json'), getFixturePath('file2nested.json'));
+  const expected = readFile('expected_nested.txt');
   expect(normalize(result)).toEqual(normalize(expected));
 });
 
-test('genDiff flat YAML files', () => {
-  const filepath1 = getFixturePath('file1.yaml');
-  const filepath2 = getFixturePath('file2.yaml');
-  const expected = readFile('expected.txt');
-
-  const result = genDiff(filepath1, filepath2);
+test('gendiff YAML nested', () => {
+  const result = genDiff(getFixturePath('file1nested.yaml'), getFixturePath('file2nested.yaml'));
+  const expected = readFile('expected_nested.txt');
   expect(normalize(result)).toEqual(normalize(expected));
 });
+

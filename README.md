@@ -4,3 +4,6 @@
 [![hexlet-check](https://github.com/Gera-Bukhman/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Gera-Bukhman/frontend-project-46/actions/workflows/hexlet-check.yml)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Gera-Bukhman_frontend-project-46&metric=coverage)](https://sonarcloud.io/summary/new_code?id=Gera-Bukhman_frontend-project-46)
 [![asciicast](https://asciinema.org/a/IuKlQmC01ipYUkanneybESmlL.svg)](https://asciinema.org/a/IuKlQmC01ipYUkanneybESmlL)
+[![asciicast](https://asciinema.org/a/mlPLR7gMjn78pqCwHVEO2rzg0.svg)](https://asciinema.org/a/mlPLR7gMjn78pqCwHVEO2rzg0)
+[![asciicast](https://asciinema.org/a/ZDYJjjVZvJTso0EFliPirVXsr.svg)](https://asciinema.org/a/ZDYJjjVZvJTso0EFliPirVXsr)
+[![asciicast](https://asciinema.org/a/I150l844zkY0m4zmWDoKVesw5.svg)](https://asciinema.org/a/I150l844zkY0m4zmWDoKVesw5)
