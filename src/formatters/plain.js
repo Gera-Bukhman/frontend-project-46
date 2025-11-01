@@ -1,43 +1,41 @@
 const stringify = (value) => {
   if (value === null) {
-    return 'null';
+    return 'null'
   }
 
   if (typeof value === 'object') {
-    return '[complex value]';
+    return '[complex value]'
   }
 
   if (typeof value === 'string') {
-    return `'${value}'`;
+    return `'${value}'`
   }
 
-  return String(value);
-};
+  return String(value)
+}
 
 const formatPlain = (diff, path = '') => {
   const lines = diff.flatMap((node) => {
-    const {
-      key, type, value, children, oldValue, newValue,
-    } = node;
-    const currentPath = path ? `${path}.${key}` : key;
+    const { key, type, value, children, oldValue, newValue } = node
+    const currentPath = path ? `${path}.${key}` : key
 
     switch (type) {
       case 'added':
-        return `Property '${currentPath}' was added with value: ${stringify(value)}`;
+        return `Property '${currentPath}' was added with value: ${stringify(value)}`
       case 'removed':
-        return `Property '${currentPath}' was removed`;
+        return `Property '${currentPath}' was removed`
       case 'updated':
-        return `Property '${currentPath}' was updated. From ${stringify(oldValue)} to ${stringify(newValue)}`;
+        return `Property '${currentPath}' was updated. From ${stringify(oldValue)} to ${stringify(newValue)}`
       case 'nested':
-        return formatPlain(children, currentPath);
+        return formatPlain(children, currentPath)
       case 'unchanged':
-        return [];
+        return []
       default:
-        throw new Error(`Unknown type: ${type}`);
+        throw new Error(`Unknown type: ${type}`)
     }
-  });
+  })
 
-  return lines.join('\n');
-};
+  return lines.join('\n')
+}
 
-export default formatPlain;
+export default formatPlain
