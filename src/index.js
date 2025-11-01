@@ -1,7 +1,7 @@
 import { readFileSync } from 'fs';
 import path from 'path';
 import { parse } from './parsers.js';
-import format from './formatters/stylish.js';
+import format from './formatters/index.js';
 
 const buildDiff = (obj1, obj2) => {
   const keys = [...new Set([...Object.keys(obj1), ...Object.keys(obj2)])].sort();
@@ -53,7 +53,7 @@ const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
   
   const diff = buildDiff(obj1, obj2);
   
-  return format(diff);
+  return format(diff, formatName);
 };
 
 export default genDiff;

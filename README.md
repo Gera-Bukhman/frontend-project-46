@@ -5,3 +5,4 @@
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Gera-Bukhman_frontend-project-46&metric=coverage)](https://sonarcloud.io/summary/new_code?id=Gera-Bukhman_frontend-project-46)
 [![asciicast](https://asciinema.org/a/IuKlQmC01ipYUkanneybESmlL.svg)](https://asciinema.org/a/IuKlQmC01ipYUkanneybESmlL)
 [![asciicast](https://asciinema.org/a/yNxmPhkacQtNgyc9kq5z55dni.svg)](https://asciinema.org/a/yNxmPhkacQtNgyc9kq5z55dni)
+[![asciicast](https://asciinema.org/a/ZDYJjjVZvJTso0EFliPirVXsr.svg)](https://asciinema.org/a/ZDYJjjVZvJTso0EFliPirVXsr)
