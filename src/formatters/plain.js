@@ -1,4 +1,4 @@
-const stringify = (value) => {
+const stringify = value => {
   if (value === null) {
     return 'null'
   }
@@ -15,23 +15,23 @@ const stringify = (value) => {
 }
 
 const formatPlain = (diff, path = '') => {
-  const lines = diff.flatMap((node) => {
+  const lines = diff.flatMap(node => {
     const { key, type, value, children, oldValue, newValue } = node
     const currentPath = path ? `${path}.${key}` : key
 
     switch (type) {
-      case 'added':
-        return `Property '${currentPath}' was added with value: ${stringify(value)}`
-      case 'removed':
-        return `Property '${currentPath}' was removed`
-      case 'updated':
-        return `Property '${currentPath}' was updated. From ${stringify(oldValue)} to ${stringify(newValue)}`
-      case 'nested':
-        return formatPlain(children, currentPath)
-      case 'unchanged':
-        return []
-      default:
-        throw new Error(`Unknown type: ${type}`)
+    case 'added':
+      return `Property '${currentPath}' was added with value: ${stringify(value)}`
+    case 'removed':
+      return `Property '${currentPath}' was removed`
+    case 'updated':
+      return `Property '${currentPath}' was updated. From ${stringify(oldValue)} to ${stringify(newValue)}`
+    case 'nested':
+      return formatPlain(children, currentPath)
+    case 'unchanged':
+      return []
+    default:
+      throw new Error(`Unknown type: ${type}`)
     }
   })
 
