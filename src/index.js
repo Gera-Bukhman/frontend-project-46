@@ -19,8 +19,8 @@ const buildDiff = (obj1, obj2) => {
     }
 
     if (typeof value1 === 'object' && value1 !== null
-        && typeof value2 === 'object' && value2 !== null
-        && !Array.isArray(value1) && !Array.isArray(value2)) {
+      && typeof value2 === 'object' && value2 !== null
+      && !Array.isArray(value1) && !Array.isArray(value2)) {
       return {
         key,
         type: 'nested',
