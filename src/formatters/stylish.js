@@ -19,25 +19,25 @@ const stylish = (diff, depth = 1) => {
   const indent = ' '.repeat(depth * 4 - 2)
   const bracketIndent = ' '.repeat((depth - 1) * 4)
 
-  const lines = diff.flatMap(node => {
+  const lines = diff.flatMap((node) => {
     const { key, type, value, children, oldValue, newValue } = node
 
     switch (type) {
-    case 'added':
-      return `${indent}+ ${key}: ${stringify(value, depth + 1)}`
-    case 'removed':
-      return `${indent}- ${key}: ${stringify(value, depth + 1)}`
-    case 'unchanged':
-      return `${indent}  ${key}: ${stringify(value, depth + 1)}`
-    case 'updated':
-      return [
-        `${indent}- ${key}: ${stringify(oldValue, depth + 1)}`,
-        `${indent}+ ${key}: ${stringify(newValue, depth + 1)}`,
-      ]
-    case 'nested':
-      return `${indent}  ${key}: ${stylish(children, depth + 1)}`
-    default:
-      throw new Error(`Unknown type: ${type}`)
+      case 'added':
+        return `${indent}+ ${key}: ${stringify(value, depth + 1)}`
+      case 'removed':
+        return `${indent}- ${key}: ${stringify(value, depth + 1)}`
+      case 'unchanged':
+        return `${indent}  ${key}: ${stringify(value, depth + 1)}`
+      case 'updated':
+        return [
+          `${indent}- ${key}: ${stringify(oldValue, depth + 1)}`,
+          `${indent}+ ${key}: ${stringify(newValue, depth + 1)}`,
+        ]
+      case 'nested':
+        return `${indent}  ${key}: ${stylish(children, depth + 1)}`
+      default:
+        throw new Error(`Unknown type: ${type}`)
     }
   })
 
