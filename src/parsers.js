@@ -12,4 +12,4 @@ const parse = (data, format) => {
   }
 };
 
-export { parse };
+export default parse;

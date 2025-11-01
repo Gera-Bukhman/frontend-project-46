@@ -2,23 +2,25 @@ const stringify = (value) => {
   if (value === null) {
     return 'null';
   }
-  
+
   if (typeof value === 'object') {
     return '[complex value]';
   }
-  
+
   if (typeof value === 'string') {
     return `'${value}'`;
   }
-  
+
   return String(value);
 };
 
 const formatPlain = (diff, path = '') => {
   const lines = diff.flatMap((node) => {
-    const { key, type, value, children, oldValue, newValue } = node;
+    const {
+      key, type, value, children, oldValue, newValue,
+    } = node;
     const currentPath = path ? `${path}.${key}` : key;
-    
+
     switch (type) {
       case 'added':
         return `Property '${currentPath}' was added with value: ${stringify(value)}`;
@@ -34,7 +36,7 @@ const formatPlain = (diff, path = '') => {
         throw new Error(`Unknown type: ${type}`);
     }
   });
-  
+
   return lines.join('\n');
 };
 
